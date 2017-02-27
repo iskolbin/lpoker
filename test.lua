@@ -1,0 +1,11 @@
+local check5 = require('check5')
+
+assert( check5.evalhand{{1,1},{1,2},{1,3},{1,4},{1,5}} == check5.STRAIGHT_FLUSH )
+assert( check5.evalhand{{1,1},{1,2},{1,3},{1,4},{1,6}} == check5.FLUSH )
+assert( check5.evalhand{{1,1},{1,2},{1,3},{2,4},{1,5}} == check5.STRAIGHT )
+assert( check5.evalhand{{1,1},{2,1},{3,7},{2,6},{1,9}} == check5.ONE_PAIR )
+assert( check5.evalhand{{1,1},{2,1},{3,7},{2,6},{1,6}} == check5.TWO_PAIRS )
+assert( check5.evalhand{{1,1},{2,1},{3,1},{2,6},{1,9}} == check5.THREE_OF_A_KIND )
+assert( check5.evalhand{{1,1},{2,1},{3,1},{4,1},{1,9}} == check5.FOUR_OF_A_KIND )
+assert( check5.evalhand{{1,1},{2,1},{3,1},{2,6},{1,6}} == check5.FULL_HOUSE )
+assert( check5.evalhand{{1,1},{1,2},{1,3},{1,4},{2,6}} == check5.HIGH_CARD )
